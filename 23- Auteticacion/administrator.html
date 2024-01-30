@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Se agrega el script del guardian en el head, ya que debe dar acceso o denegar la pagina dependiendo del rol  -->
+    <script src="js/hooks/bootstrapSession.js"></script>
+    <title>Cuenta Privada</title>
+</head>
+<body>
+    <h1>ESTA CUENTA ES PRIVADA</h1>
+    <a href="index.html" id = "login-out">Cerrar sesion</a>
+    <script>
+        const cerrar = document.getElementById("login-out");
+
+        cerrar.addEventListener(e =>{ 
+            localStorage.setItem("isAuthorizated", "false");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* root tiene como funcion de crear variables */
+:root {
+    --primary: #222;
+    --secondary: #6BAAFB;
+    --white: #fff;
+    --black: #000;
+}
+
+/* BANNER */
+.banner {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* INPUTS */
+.input-box {
+    position: relative;
+    width: 600px;
+}
+
+.input-box input {
+    width: 600px;
+    padding: 20px;
+    border: 3px solid var(--secondary);
+    outline: none;
+    /*Quita los diseños predeterminados del navegador*/
+    border-radius: 25px;
+    background: var(--white);
+    color: var(--primary);
+    font-size: 16px;
+    transition: 0.5s;
+    /*Tiene como funcion que las transformaciones sean mas suave*/
+}
+
+.input-box span {
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    pointer-events: none;
+    /*Tiene como funcion quitar los eventos*/
+    color: var(--black);
+    transition: 0.5s;
+}
+
+/* la vigurilla sirve para decirle a Span que hacer cuando a input se le haga focus  */
+.input-box input:focus~span,
+.input-box input:valid~span {
+    color: var(--white);
+    transform: translateX(50px) translateY(-10px);
+    font-size: 14px;
+    background: var(--secondary);
+    padding: 4px 10px;
+    border-radius: 25px;
+}
+
+.card-body  p {
+    font-size: large;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.card-body p span {
+    font-size: medium;
+    font-weight: normal;
+}

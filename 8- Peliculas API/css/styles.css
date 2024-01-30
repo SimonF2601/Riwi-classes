@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/* root tiene como funcion de crear variables */
+:root{ 
+    --primary: #222;
+    --secondary: #6441a4;
+    --white: #fff;
+    --black: #000;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* suma los margin de cada caja y lo vuelve una nueva*/
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: var(--primary);
+}
+
+/* BANNER */
+.banner{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* INPUTS */
+.input-box{
+    position: relative;
+    width: 600px;
+}
+
+.input-box input{
+    width: 600px;
+    padding: 20px;
+    border: 3px solid var(--secondary);
+    outline: none; /*Quita los diseños predeterminados del navegador*/
+    border-radius: 25px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 16px;
+    transition: 0.5s; /*Tiene como funcion que las transformaciones sean mas suave*/
+}
+
+.input-box span{
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    pointer-events: none; /*Tiene como funcion quitar los eventos*/
+    color: var(--white);
+    transition: 0.5s;
+}
+
+/* la vigurilla sirve para decirle a Span que hacer cuando a input se le haga focus  */
+.input-box input:focus ~ span,
+.input-box input:valid ~ span{
+    transform: translateX(50px) translateY(-10px);
+    font-size: 14px;
+    background: var(--secondary);
+    padding: 4px 10px;
+    border-radius: 25px;
+}
+
+/* CARDS */
+.container-cards{
+    margin: 20px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.container-cards .card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--black);
+    border: 3px solid var(--secondary);
+    padding: 10px;
+    border-radius: 10px;
+    width: 325px;
+    height: 650px;
+    overflow-y: auto;
+}
+
+.container-cards .card .title-movie{
+    color: var(--white);
+    text-align: center;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.container-cards .card p{
+    font-weight: bold;
+    color: var(--white);
+    text-align: center;
+}
+
+.container-cards .card p span{
+    font-weight: normal;
+}
+
+.container-cards .card button{
+    background: var(--secondary);
+    padding: 10px 20px;
+    border-radius: 15px;
+
+}
+
+/* CARD SHOW MORE */
+.card-show-more{
+    display: flex;
+    width: 70%;
+    gap: 20px;
+}
+
+.card-show-more p{
+    color: var(--white);
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card-show-more p span{
+    font-weight: normal;
+}
+
+.bx-arrow-back{
+    color: var(--white);
+    cursor: pointer;
+    font-size: 28px;
+    height: min-content;
+}
